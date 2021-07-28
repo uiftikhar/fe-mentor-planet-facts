@@ -11,9 +11,10 @@ html {
 
 body {
     font-family: 'Spartan', sans-serif;
-    font-size: 14px;
+    
+    font-size: 0.875rem;
     background: url(/assets/background-stars.svg) center/cover no-repeat;
-    line-height: 25px;
+    line-height: 1.5625rem;
     font-weight: 400;
     background-color: $primary-bg;
     color: $font-primary;
@@ -30,12 +31,35 @@ a {
   text-decoration: inherit; /* no underline */
 }
 
+
+button,
+input {
+  font-family: 'Spartan', sans-serif;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: $white;
+}
 // Visibility
+.show-only-mobile {
+  @include breakpoint-up(medium) {
+    display: none;
+  }
+}
+
+.hide-for-tablet {
+  @include breakpoint-up(small) {
+    display: none;
+  }
+}
+
 .hide-for-mobile {
   @include breakpoint-down(medium) {
     display: none;
   }
 }
+
+
 
 .hide-for-desktop {
   @include breakpoint-up(large) {

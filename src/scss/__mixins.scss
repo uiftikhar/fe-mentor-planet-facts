@@ -1,5 +1,5 @@
 // 640px, 1024, 1400px
-$breakpoints-up: ("medium": "40em", "large": "64em", "xlarge": "87.5em");
+$breakpoints-up: ("small": "39.9375em", "medium": "40em", "large": "64em", "xlarge": "87.5em");
 
 // 639px, 1023px, 1399px
 $breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.4375em");
@@ -14,4 +14,10 @@ $breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.43
   @media (max-width: map-get($map: $breakpoints-down, $key: $size)) {
     @content;
   }  
+}
+
+@mixin tablet-only() {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
 }
