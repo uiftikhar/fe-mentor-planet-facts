@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap');
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 14px;
+    background: url(/assets/background-stars.svg) center/cover no-repeat;
+    line-height: 25px;
+    font-weight: 400;
+    background-color: $primary-bg;
+    color: $font-primary;
+    height: 100vh;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;;
+}
+
+a {
+  color: unset; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+// Visibility
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+// spacing
+.container {
+  margin: 0 auto;
+
+  &__pt {
+    padding-top: 1rem;;
+  }
+
+  &__pr {
+    padding-right: 1.5rem;
+  }
+
+  &__pb {
+    padding-bottom: 1rem;;
+  }
+
+  &__pl {
+    padding-left: 1.5rem;
+  }
+
+  &__py {
+    padding-top: 1rem;; 
+    padding-bottom: 1rem;; 
+  }
+
+  &__px {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &__p-all {
+    padding-top: 1rem;; 
+    padding-bottom: 1rem;; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+// flexbox helper
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-col {
+    flex-direction: column;
+  }
+}
