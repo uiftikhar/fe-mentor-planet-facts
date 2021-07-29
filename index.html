@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="dist/style.css">
   <title>Frontend Mentor | Planets fact site</title>
@@ -43,8 +42,31 @@
       <p>Mercury is the smallest planet in the Solar System and the closest 
         to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
         shortest of all the Sun's planets. Mercury is one of four terrestrial 
-        planets in the Solar System, and is a rocky body like Earth.</p>
+        planets in the Solar System, and is a rocky body like Earth.
+      </p>
+      <p class="flex flex-jc-c">
+        Source: <a href="#">Wikipedia</a> <img src="./assets/link.svg"/>
+      </p>
     </section>
+    <section class="content__planet-facts">
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>ROTATION TIME</h4>
+        <span>58.6 DAYS</span>
+      </section>
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>REVOLUTION TIME</h4>
+        <span>58.6 DAYS</span>
+      </section>
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>RADIUS</h4>
+        <span>2,439.7KM</span>
+      </section>
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>AVERAGE TEMP.</h4>
+        <span>430&#176;C</span>
+      </section>
+    </section>
+
   </article>
   
   <div class="side-drawer">
@@ -57,7 +79,7 @@
     <a href="#uranus"><span>URANUS</span></a>
     <a href="#neptune"><span>NEPTUNE</span></a>
   </div>
- 
-  <script src="src/js/script.js"></script>
+  <script type="module" src="data.js"></script>
+  <script type="module" src="src/js/script.js"></script>
 </body>
 </html>
