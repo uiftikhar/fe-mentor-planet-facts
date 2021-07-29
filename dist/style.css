@@ -282,6 +282,134 @@ ul ul li {
   background-color: #FFFFFF;
 }
 
+.div1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.div2 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.div3 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.div4 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 3 / 1 / 4 / 4;
+}
+
+@media (min-width: 64em) {
+  .desktop-view {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+
+.content__information-links {
+  display: none;
+}
+
+@media (min-width: 64em) {
+  .content__information-links {
+    display: unset;
+    width: unset;
+    -webkit-transform: unset;
+            transform: unset;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 3 / 3 / 4;
+  }
+}
+
+@media (min-width: 39.9375em) {
+  .content__information-links {
+    display: inline-block;
+    width: 49.5%;
+    -webkit-transform: translateY(-46px);
+            transform: translateY(-46px);
+  }
+  .content__information-links-active-mercury {
+    background-color: #419EBB;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .content__information-links-active-venus {
+    background-color: #EDA249;
+    border: none;
+  }
+  .content__information-links-active-earth {
+    background-color: #6D2ED5;
+    border: none;
+  }
+  .content__information-links-active-mars {
+    background-color: #D14C32;
+    border: none;
+  }
+  .content__information-links-active-jupiter {
+    background-color: #D83A34;
+    border: none;
+  }
+  .content__information-links-active-saturn {
+    background-color: #CD5120;
+    border: none;
+  }
+  .content__information-links-active-uranus {
+    background-color: #1EC2A4;
+    border: none;
+  }
+  .content__information-links-active-neptune {
+    background-color: #2D68F0;
+    border: none;
+  }
+}
+
+.content__information-links > nav {
+  padding-left: 50px;
+}
+
+.content__information-links > nav > ul :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.content__information-links > nav > ul > li {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 7px 20px;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1.92857px;
+  line-height: 25px;
+  max-width: 281px;
+}
+
+.content__information-links > nav > ul > li > span {
+  opacity: 0.5;
+  margin-right: 17px;
+}
+
 .content__links {
   position: relative;
   padding: 1.25rem 1.5rem;
@@ -410,9 +538,32 @@ ul ul li {
           align-items: center;
 }
 
+@media (min-width: 39.9375em) {
+  .content__image-wrapper {
+    height: 28.75rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content__image-wrapper {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 1 / 1 / 3 / 3;
+  }
+}
+
 .content__image-wrapper-mercury {
   width: 6.9375rem;
   height: 6.9375rem;
+}
+
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-mercury {
+    width: 11.5rem;
+    height: 11.5rem;
+  }
 }
 
 .content__image-wrapper-venus {
@@ -420,9 +571,23 @@ ul ul li {
   height: 9.625rem;
 }
 
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-venus {
+    width: 15.8125rem;
+    height: 15.8125rem;
+  }
+}
+
 .content__image-wrapper-earth {
   width: 10.8125rem;
   height: 10.8125rem;
+}
+
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-earth {
+    width: 17.8125rem;
+    height: 17.8125rem;
+  }
 }
 
 .content__image-wrapper-mars {
@@ -430,9 +595,23 @@ ul ul li {
   height: 8.0625rem;
 }
 
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-mars {
+    width: 13.3125rem;
+    height: 13.3125rem;
+  }
+}
+
 .content__image-wrapper-jupiter {
   width: 14rem;
   height: 14rem;
+}
+
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-jupiter {
+    width: 23.0625rem;
+    height: 23.0625rem;
+  }
 }
 
 .content__image-wrapper-saturn {
@@ -440,9 +619,23 @@ ul ul li {
   height: 16rem;
 }
 
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-saturn {
+    width: 26.375rem;
+    height: 26.375rem;
+  }
+}
+
 .content__image-wrapper-uranus {
   width: 11rem;
   height: 11rem;
+}
+
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-uranus {
+    width: 18.125rem;
+    height: 18.125rem;
+  }
 }
 
 .content__image-wrapper-neptune {
@@ -450,8 +643,35 @@ ul ul li {
   height: 10.8125rem;
 }
 
+@media (min-width: 39.9375em) {
+  .content__image-wrapper-neptune {
+    width: 17.8125rem;
+    height: 17.8125rem;
+  }
+}
+
 .content__planet-text {
   text-align: center;
+}
+
+@media (min-width: 39.9375em) {
+  .content__planet-text {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 64em) {
+  .content__planet-text {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 3 / 2 / 4;
+    display: unset;
+    width: unset;
+  }
 }
 
 .content__planet-text > h1 {
@@ -461,6 +681,13 @@ ul ul li {
   margin-bottom: 1rem;
 }
 
+@media (min-width: 39.9375em) {
+  .content__planet-text > h1 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+}
+
 .content__planet-text > p {
   font-size: 0.6875rem;
   line-height: 1.5625rem;
@@ -468,6 +695,14 @@ ul ul li {
   font-weight: 400;
   line-height: 1.375rem;
   opacity: 0.7;
+}
+
+@media (min-width: 39.9375em) {
+  .content__planet-text > p {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .content__planet-text > p:last-child {
@@ -483,14 +718,54 @@ ul ul li {
   margin-left: 0.25rem;
 }
 
+@media (min-width: 39.9375em) {
+  .content__planet-facts {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 11px;
+  }
+}
+
+@media (min-width: 40em) {
+  .content__planet-facts {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 3 / 1 / 4 / 4;
+  }
+}
+
 .content__planet-facts-wrapper:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+
+@media (min-width: 39.9375em) {
+  .content__planet-facts-wrapper:not(:last-child) {
+    margin-bottom: 0px;
+  }
 }
 
 .content__planet-facts-wrapper {
   mix-blend-mode: normal;
   border: 0.0625rem solid rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1.4375rem 0.75rem 1.4375rem;
+}
+
+@media (min-width: 39.9375em) {
+  .content__planet-facts-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 0px;
+    padding: 1rem;
+  }
 }
 
 .content__planet-facts-wrapper > h4 {
@@ -507,6 +782,7 @@ ul ul li {
   color: #FFFFFF;
   font-size: 1.25rem;
   letter-spacing: -0.046875rem;
+  line-height: 31px;
 }
 
 .side-drawer {

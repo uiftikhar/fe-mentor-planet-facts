@@ -5,6 +5,7 @@ const sideDrawer = document.querySelector('.side-drawer');
 const btnHamburger = document.querySelector('#btnHamburger');
 
 const contentLinks = document.querySelectorAll('#content-links > li > a');
+const contentLinksTablet = document.querySelectorAll('#tablet-links > li');
 const planetContent= document.querySelectorAll('#planet-content > p, #planet-content > h1');
 const planetFacts= document.querySelectorAll('#planet-facts > section > span');
 const planetImage = document.querySelector('#planet-image > img');
@@ -33,13 +34,22 @@ window.addEventListener('hashchange', () => {
         link.classList.add('active')
       }
     })    
+    contentLinksTablet.forEach((link, index) => {
+      link.classList = '';
+      if(index === 0) {
+        link.classList.add(`content__information-links-active-${planetKey}`)
+        link.classList.add('active')
+      }
+    })    
   }
 });
 
 const updatePlanetContent = () => {
   planetTitle.innerHTML = currentPlanet.name;
   planetContentData.innerHTML = currentPlanet.overview.content;
-  planetContentSource.innerHTML = currentPlanet.overview.source;
+  console.log(planetContentSource.querySelector('a'));
+  const source = planetContentSource.querySelector('a')
+  source.href = currentPlanet.overview.source;
 }
 
 const updatePlanetFacts = () => {
@@ -70,6 +80,25 @@ contentLinks.forEach(link => {
     } else {
       const key = link.innerHTML.toLowerCase() === 'surface' ? 'geology' : link.innerHTML.toLowerCase();
       link.classList.add('active')
+      planetContentData.innerHTML = currentPlanet[key].content;
+      planetContentSource.href = currentPlanet[key].source;
+    }
+  })
+})
+
+contentLinksTablet.forEach(link => {
+  link.addEventListener('click', () => {
+    const url = link.querySelector('a');
+    contentLinksTablet.forEach(otherLink => {
+      otherLink.className = '';
+    })
+    link.classList.add(`content__information-links-active-${planetKey}`)
+    if(link.classList.contains('active')) {
+      link.classList.remove('active')
+    } else {
+      const key = url.innerHTML.toLowerCase() === 'surface' ? 'geology' : url.innerHTML.toLowerCase();
+      link.classList.add('active')
+      console.log(key, currentPlanet[key])
       planetContentData.innerHTML = currentPlanet[key].content;
       planetContentSource.href = currentPlanet[key].source;
     }
