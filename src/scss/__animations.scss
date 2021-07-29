@@ -1,0 +1,10 @@
+
+@keyframes spin {
+  0% {background-position: 0 0;}
+  100% {background-position: 630px 0;}
+ }
+
+ .spin {
+  transition: transform 200ms linear;
+  animation: spin 4s linear infinite; /* This is going to be defined in the next step */
+}

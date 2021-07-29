@@ -1,48 +1,76 @@
-.image-links {
-  position: relative;
-  padding: 1.25rem 1.5rem;
-  @include breakpoint-up(medium) {
-    display: none;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0.0625rem;
-    bottom: 0;
-    left: 0;
-    opacity: 0.2;
-    background-color: $font-primary;
-  }
-
-  > a {
-    position: relative;
-    opacity: 0.5;
-    font-size: 0.5625rem;
-    line-height: 0.625rem;
-    letter-spacing: 1.5.8125rem;
-    &:nth-child(2):active{
-      img {
-        content: url('/assets/geology-earth.png');
-      }
-    }
-    &:focus, &:active {
-      opacity: 1;
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        bottom: -1.3125rem;
-        left: 0;
-        background-color: $steelBlue;
-        height:0.25rem;
-      }
-    }
-  }
-
-}
-
 .content {
+  &__links {
+    position: relative;
+    padding: 1.25rem 1.5rem;
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0.0625rem;
+      bottom: 0;
+      left: 0;
+      opacity: 0.2;
+      background-color: $font-primary;
+    }
+  
+    > li > a {
+      position: relative;      
+      font-size: 0.5625rem;
+      line-height: 0.625rem;
+      letter-spacing: 0.120535625rem;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
+      }
+    }
+    &-active {
+      &-mercury  {
+        @include mobile-nav($steelBlue) { 
+          content: '';
+        }
+      }
+      &-venus  {
+        @include mobile-nav($lightOrange) { 
+          content: '';
+        }
+      }
+      &-earth  {
+        @include mobile-nav($darkPurple) { 
+          content: '';
+        }
+      }
+      &-mars  {
+        @include mobile-nav($lightRedOrange) { 
+          content: '';
+        }
+      }
+      &-jupiter  {
+        @include mobile-nav($darkRedOrange) { 
+          content: '';
+        }
+      }
+      &-saturn  {
+        @include mobile-nav($darkOrange) { 
+          content: '';
+        }
+      }
+      &-uranus  {
+        @include mobile-nav($cyan) { 
+          content: '';
+        }
+      }
+      &-neptune  {
+        @include mobile-nav($oceanBlue) { 
+          content: '';
+        }
+      }
+    }
+  
+  }
+
   &__image-wrapper {
     width: 100%;
     height: 19rem;
@@ -52,6 +80,34 @@
     &-mercury {
       width: 6.9375rem;
       height: 6.9375rem;
+    }
+    &-venus {
+      width: 9.625rem;
+      height: 9.625rem;
+    }
+    &-earth {
+      width: 10.8125rem;
+      height: 10.8125rem;
+    }
+    &-mars {
+      width: 8.0625rem;
+      height: 8.0625rem;
+    }
+    &-jupiter {
+      width: 14rem;
+      height: 14rem;
+    }
+    &-saturn {
+      width: 16rem;
+      height: 16rem;
+    }
+    &-uranus {
+      width: 11rem;
+      height: 11rem;
+    }
+    &-neptune {
+      width: 10.8125rem;
+      height: 10.8125rem;
     }
   }
 
@@ -73,9 +129,12 @@
       &:last-child {
         margin-bottom: 1.625rem;
         opacity: 0.5;
-        img {
-          margin-bottom: 0.125rem;
-        } 
+        a {
+          text-decoration: underline;
+          img {
+            margin-left: 0.25rem;
+          }
+        }
       }
     }
   }
@@ -87,9 +146,9 @@
     &-wrapper {
       mix-blend-mode: normal;
       border: 0.0625rem solid rgba($color: $white, $alpha: 0.2);
-      padding: 0.5625rem 1.5rem 0.8125rem 1.5rem;
+      padding: 0.5rem 1.4375rem 0.75rem 1.4375rem;
       > h4 {
-        opacity: 0.2;
+        opacity: 0.5;
         display: inline;
         font-size: 0.5rem;
         line-height: 1rem;

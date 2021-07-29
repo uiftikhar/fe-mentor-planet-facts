@@ -21,34 +21,36 @@
         <a href="#">URANUS</a>
         <a href="#">NEPTUNE</a>
       </section>
-      <a id="btnHamburger" href="#" class="header__toggle hide-for-tablet">
+      <a id="btnHamburger" class="header__toggle hide-for-tablet">
         <span></span>
         <span></span>
         <span></span>
       </a>
     </nav>
   </header>
-  <section class="image-links flex flex-jc-sb">
-    <a href="#">OVERVIEW</a>
-    <a href="#">STRUCTURE</a>
-    <a href="#">SURFACE</a>
-  </section>
-  <article class="content container__px">
-    <section class="content__image-wrapper">
-      <img class="content__image-wrapper-mercury" src="assets/planet-mercury.svg"/>
+  <article class="content">
+    <nav>
+      <ul id="content-links" class="content__links flex flex-jc-sb">
+        <li><a class="active content__links-active-mercury">OVERVIEW</a></li>
+        <li><a>STRUCTURE</a></li>
+        <li><a>SURFACE</a></li>
+      </ul>
+    </nav>
+    <section id="planet-image" class="content__image-wrapper container__px">
+      <img class="content__image-wrapper-mercury" src="/assets/planet-mercury.svg" alt="mercury"/>
     </section>
-    <section class="content__planet-text">
+    <section id="planet-content" class="content__planet-text container__px">
       <h1>Mercury</h1>
       <p>Mercury is the smallest planet in the Solar System and the closest 
         to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
         shortest of all the Sun's planets. Mercury is one of four terrestrial 
         planets in the Solar System, and is a rocky body like Earth.
       </p>
-      <p class="flex flex-jc-c">
-        Source: <a href="#">Wikipedia</a> <img src="./assets/link.svg"/>
+      <p class="flex flex-ai-c flex-jc-c">
+        Source: <a class="flex flex-jc-c" href="#">Wikipedia<img src="./assets/link.svg"/></a> 
       </p>
     </section>
-    <section class="content__planet-facts">
+    <section id="planet-facts" class="content__planet-facts container__px">
       <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
         <h4>ROTATION TIME</h4>
         <span>58.6 DAYS</span>
@@ -70,14 +72,14 @@
   </article>
   
   <div class="side-drawer">
-    <a href="#mercury"><span>MERCURY</span></a>
-    <a href="#venus"><span>VENUS</span></a>
-    <a href="#earth"><span>EARTH</span></a>
-    <a href="#mars"><span>MARS</span></a>
-    <a href="#jupiter"><span>JUPITER</span></a>
-    <a href="#saturn"><span>SATURN</span></a>
-    <a href="#uranus"><span>URANUS</span></a>
-    <a href="#neptune"><span>NEPTUNE</span></a>
+    <a  href="#mercury"><span>MERCURY</span></a>
+    <a  href="#venus"><span>VENUS</span></a>
+    <a  href="#earth"><span>EARTH</span></a>
+    <a  href="#mars"><span>MARS</span></a>
+    <a  href="#jupiter"><span>JUPITER</span></a>
+    <a  href="#saturn"><span>SATURN</span></a>
+    <a  href="#uranus"><span>URANUS</span></a>
+    <a  href="#neptune"><span>NEPTUNE</span></a>
   </div>
   <script type="module" src="data.js"></script>
   <script type="module" src="src/js/script.js"></script>

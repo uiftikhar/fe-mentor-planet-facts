@@ -21,3 +21,18 @@ $breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.43
     @content;
   }
 }
+
+$planet-colors: $mercury, $venus, $earth, $mars, $jupiter, $saturn, $uranus, $neptune;
+
+
+@mixin mobile-nav($backgroundColor) {
+  &::after {
+    @content;
+    position: absolute;
+    width: 100%;
+    bottom: -1.2125rem;
+    left: 0;
+    height:0.25rem;
+    background-color: $backgroundColor;
+  }
+}

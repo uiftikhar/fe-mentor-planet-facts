@@ -21,6 +21,7 @@ body {
     height: 100vh;
 }
 
+// Resets ----------------
 h1, h2, h3, h4, p {
   margin: 0;
   padding: 0;
@@ -40,6 +41,16 @@ input {
   background: none;
   color: $white;
 }
+ul,
+ul li,
+ul ul li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style-type: none;
+   line-height: 0;
+}
+// ----------------
 // Visibility
 .show-only-mobile {
   @include breakpoint-up(medium) {
