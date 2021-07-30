@@ -729,11 +729,6 @@ ul ul li {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 11px;
-  }
-}
-
-@media (min-width: 600px) {
-  .content__planet-facts {
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
@@ -769,7 +764,7 @@ ul ul li {
   padding: 0rem 1.4375rem 0rem 1.4375rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__planet-facts-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -780,6 +775,7 @@ ul ul li {
             align-items: flex-start;
     margin-bottom: 0px;
     padding: 1rem;
+    height: 88px;
   }
 }
 

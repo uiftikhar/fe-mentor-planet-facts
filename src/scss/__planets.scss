@@ -303,8 +303,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-column-gap: 11px;
-    }
-    @include for-tablet-up {
       grid-area: 3 / 1 / 4 / 4;
     }
     @include for-only-tablet {
@@ -319,11 +317,12 @@
     &-wrapper {
       mix-blend-mode: normal;
       height: 48px;
-      @include for-tablet-up {
+      @include for-only-tablet {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 0px;
         padding: 1rem;
+        height: 88px;
       }
 
       border: 0.0625rem solid rgba($color: $white, $alpha: 0.2);
