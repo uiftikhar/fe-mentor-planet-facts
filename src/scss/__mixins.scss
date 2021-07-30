@@ -1,25 +1,27 @@
-// 76px, 1024, 1400px
-$breakpoints-up: ("small": "39.9375em", "medium": "40em", "large": "64em", "xlarge": "87.5em");
+$phone: 599px;
+$tablet: 600px;
+$tabletEnd: 1199px;
+$regularDesktop: 1200px;
+$bigDesktop: 1800px;
 
-// 639px, 1023px, 1399px
-$breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.4375em");
-
-@mixin breakpoint-up($size) {
-  @media (min-width: map-get($map: $breakpoints-up, $key: $size)) {
-    @content;
-  }  
+@mixin for-phone-only {
+  @media (max-width: $phone) { @content; }
 }
 
-@mixin breakpoint-down($size) {
-  @media (max-width: map-get($map: $breakpoints-down, $key: $size)) {
-    @content;
-  }  
+@mixin for-tablet-up {
+  @media (min-width: $tablet) { @content; }
 }
 
-@mixin tablet-only() {
-  @media (min-width: 768px) and (max-width: 1024px) {
-    @content;
-  }
+@mixin for-only-tablet {
+  @media (min-width: $tablet) and (max-width: $tabletEnd) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $regularDesktop) { @content; }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: $bigDesktop) { @content; }
 }
 
 $planet-colors: $mercury, $venus, $earth, $mars, $jupiter, $saturn, $uranus, $neptune;

@@ -1,31 +1,38 @@
-
-  .div1 { grid-area: 1 / 1 / 3 / 3; }
-  .div2 { grid-area: 1 / 3 / 2 / 4; }
-  .div3 { grid-area: 2 / 3 / 3 / 4; }
-  .div4 { grid-area: 3 / 1 / 4 / 4; }
-  
-  .desktop-view {
-    @include breakpoint-up(large) {
+.desktop-view {
+    @include for-desktop-up {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
     }
-}
+  }
+  .tablet-view {
+    @include for-only-tablet {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+  }
+  
+
 .content {
+  
   &__information-links {
     display: none;
-    @include breakpoint-up(large) {
+    @include for-only-tablet {
+      grid-area: 4 / 3 / 6 / 5; 
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    @include for-desktop-up {
       display: unset;
       width: unset;
       transform: unset;
       grid-area: 2 / 3 / 3 / 4;
     }
-    @include breakpoint-up(small) {
-      display: inline-block;
-      width: 49.5%;
-      transform: translateY(-46px);
+    @include for-tablet-up {
       &-active {
         &-mercury  {            
           background-color: $steelBlue;
@@ -62,8 +69,8 @@
         }
       }
       > nav {
-        padding-left: 50px;
         > ul {
+          display: inline-block;
           :not(:last-child) {
             margin-bottom: 1rem;
           }
@@ -71,10 +78,11 @@
             display: block;
             border: 1px solid rgba($white, 0.5);
             padding: 7px 20px;
-            font-size: 9px;            font-weight: bold;
+            font-size: 9px;            
+            font-weight: bold;
             letter-spacing: 1.92857px;
             line-height: 25px;
-            max-width: 281px;
+            width: 281px;
             > span {
               opacity: 0.5;
               margin-right: 17px;
@@ -84,12 +92,14 @@
     }
   }
   
+  > nav {
+    @include for-tablet-up {
+      display: none;
+    }
+  }
   &__links {
     position: relative;
     padding: 1.25rem 1.5rem;
-    @include breakpoint-up(medium) {
-      display: none;
-    }
     &::after {
       content: '';
       position: absolute;
@@ -158,20 +168,21 @@
 
   &__image-wrapper {
     width: 100%;
-    height: 19rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include breakpoint-up(small) {
-      height: 28.75rem;
+    height: 304px;
+    @include for-only-tablet {
+      grid-area: 1 / 1 / 4 / 5;
+      height: 460px
     }
-    @include breakpoint-up(large) {
+    @include for-desktop-up {
       grid-area: 1 / 1 / 3 / 3;
     }
     &-mercury {
       width: 6.9375rem;
       height: 6.9375rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 11.5rem;
         height: 11.5rem;
       }
@@ -179,7 +190,7 @@
     &-venus {
       width: 9.625rem;
       height: 9.625rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 15.8125rem;
         height: 15.8125rem;
       }
@@ -187,7 +198,7 @@
     &-earth {
       width: 10.8125rem;
       height: 10.8125rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 17.8125rem;
         height: 17.8125rem;
       }
@@ -195,15 +206,17 @@
     &-mars {
       width: 8.0625rem;
       height: 8.0625rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 13.3125rem;
         height: 13.3125rem;
       }
     }
+
+    
     &-jupiter {
       width: 14rem;
       height: 14rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 23.0625rem;
         height: 23.0625rem;
       }
@@ -211,7 +224,7 @@
     &-saturn {
       width: 16rem;
       height: 16rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 26.375rem;
         height: 26.375rem;
       }
@@ -219,7 +232,7 @@
     &-uranus {
       width: 11rem;
       height: 11rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 18.125rem;
         height: 18.125rem;
       }
@@ -227,7 +240,7 @@
     &-neptune {
       width: 10.8125rem;
       height: 10.8125rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         width: 17.8125rem;
         height: 17.8125rem;
       }
@@ -236,12 +249,17 @@
 
   &__planet-text {
     text-align: center;
-    @include breakpoint-up(small) {
-      display: inline-block;
-      width: 50%;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+    @include for-only-tablet {
+        grid-area: 4 / 1 / 6 / 3;
+        text-align: left;
+      }
+      
+      @include for-desktop-up {
       text-align: left;
-    }
-    @include breakpoint-up(large) {
       grid-area: 1 / 3 / 2 / 4;
       display: unset;
       width: unset;
@@ -251,7 +269,7 @@
       font-size: 2.5rem;
       line-height: 3.25rem;
       margin-bottom: 1rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         font-size: 3rem;
         font-weight: 400;
       }
@@ -259,16 +277,16 @@
     > p {
       font-size: 0.6875rem;
       line-height: 1.5625rem;
-      margin-bottom: 2rem;
       font-weight: 400;
       line-height: 1.375rem;
       opacity: 0.7;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         justify-content: flex-start;
       }
       &:last-child {
-        margin-bottom: 1.625rem;
         opacity: 0.5;
+        margin-top: auto;
+
         a {
           text-decoration: underline;
           img {
@@ -280,23 +298,28 @@
   }
 
   &__planet-facts {
-    @include breakpoint-up(small){
+    height: 216px;
+    @include for-tablet-up {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-column-gap: 11px;
     }
-    @include breakpoint-up(medium){
+    @include for-tablet-up {
       grid-area: 3 / 1 / 4 / 4;
+    }
+    @include for-only-tablet {
+      grid-area:  6 / 1 / 7 / 5;
     }
     &-wrapper:not(:last-child) {
       margin-bottom: 0.5rem;
-      @include breakpoint-up(small) {
+      @include for-tablet-up {
         margin-bottom: 0px;
       }
     }
     &-wrapper {
       mix-blend-mode: normal;
-      @include breakpoint-up(small){
+      height: 48px;
+      @include for-tablet-up {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 0px;
@@ -304,7 +327,7 @@
       }
 
       border: 0.0625rem solid rgba($color: $white, $alpha: 0.2);
-      padding: 0.5rem 1.4375rem 0.75rem 1.4375rem;
+      padding: 0rem 1.4375rem 0rem 1.4375rem;
       > h4 {
         opacity: 0.5;
         display: inline;
@@ -312,6 +335,9 @@
         line-height: 1rem;
         font-weight: bold;
         letter-spacing: 0.00284091015625rem;
+        @include for-only-tablet {
+          padding-bottom: 6px;
+        }
       }
       > span {
         font-family: 'Antonio';

@@ -50,33 +50,7 @@ ul ul li {
    list-style-type: none;
    line-height: 0;
 }
-// ----------------
-// Visibility
-.show-only-mobile {
-  @include breakpoint-up(medium) {
-    display: none;
-  }
-}
 
-.hide-for-tablet {
-  @include breakpoint-up(small) {
-    display: none;
-  }
-}
-
-.hide-for-mobile {
-  @include breakpoint-down(medium) {
-    display: none;
-  }
-}
-
-
-
-.hide-for-desktop {
-  @include breakpoint-up(large) {
-    display: none;
-  }
-}
 // spacing
 .container {
   margin: 0 auto;
