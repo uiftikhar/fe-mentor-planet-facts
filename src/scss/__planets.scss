@@ -2,14 +2,17 @@
     @include for-desktop-up {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 1.875rem;
+      grid-row-gap: 0.75rem;
+      height: calc(100% - 5.6875rem);
     }
   }
   .tablet-view {
     @include for-only-tablet {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-column-gap: 0rem;
         grid-row-gap: 0rem;
     }
@@ -17,6 +20,16 @@
   
 
 .content {
+
+  @include for-desktop-up {
+    padding-left: 10.3125rem;
+    padding-right: 10.3125rem;
+  }
+  > nav {
+    @include for-tablet-up {
+      display: none;
+    }
+  }
   
   &__information-links {
     display: none;
@@ -29,9 +42,8 @@
     @include for-desktop-up {
       display: unset;
       width: unset;
-      transform: unset;
-      grid-area: 2 / 3 / 3 / 4;
-      align-self: center;
+      margin-left:auto;
+      grid-area: 3 / 3 / 4 / 4;
     }
     @include for-tablet-up {
       &-active {
@@ -95,12 +107,7 @@
       }
     }
   }
-  
-  > nav {
-    @include for-tablet-up {
-      display: none;
-    }
-  }
+ 
   &__links {
     position: relative;
     padding: 1.25rem 1.5rem;
@@ -181,40 +188,56 @@
       height: 28.75rem
     }
     @include for-desktop-up {
-      grid-area: 1 / 1 / 3 / 3;
+      grid-area: 1 / 1 / 4 / 3;
       padding: 0rem;
-      height: 47.125rem;
+      height: 100%;
     }
     &-mercury {
       width: 6.9375rem;
       height: 6.9375rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 11.5rem;
         height: 11.5rem;
+      }
+      @include for-desktop-up {
+        width: 18.125rem;
+        height: 18.125rem;
       }
     }
     &-venus {
       width: 9.625rem;
       height: 9.625rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 15.8125rem;
         height: 15.8125rem;
+      }
+      @include for-desktop-up {
+        width: 25rem;
+        height: 25rem;
       }
     }
     &-earth {
       width: 10.8125rem;
       height: 10.8125rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 17.8125rem;
         height: 17.8125rem;
+      }
+      @include for-desktop-up {
+        width: 28.125rem;
+        height: 28.125rem;
       }
     }
     &-mars {
       width: 8.0625rem;
       height: 8.0625rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 13.3125rem;
         height: 13.3125rem;
+      }
+      @include for-desktop-up {
+        width: 21rem;
+        height: 21rem;
       }
     }
 
@@ -222,33 +245,49 @@
     &-jupiter {
       width: 14rem;
       height: 14rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 23.0625rem;
         height: 23.0625rem;
+      }
+      @include for-desktop-up {
+        width: 36.375rem;
+        height: 36.375rem;
       }
     }
     &-saturn {
       width: 16rem;
       height: 16rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 26.375rem;
         height: 26.375rem;
+      }
+      @include for-desktop-up {
+        width: 41.630625rem;
+        height: 41.630625rem;
       }
     }
     &-uranus {
       width: 11rem;
       height: 11rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 18.125rem;
         height: 18.125rem;
+      }
+      @include for-desktop-up {
+        width: 28.625rem;
+        height: 28.625rem;
       }
     }
     &-neptune {
       width: 10.8125rem;
       height: 10.8125rem;
-      @include for-tablet-up {
+      @include for-only-tablet {
         width: 17.8125rem;
         height: 17.8125rem;
+      }
+      @include for-desktop-up {
+        width: 28.125rem;
+        height: 28.125rem;
       }
     }
   }
@@ -266,10 +305,11 @@
       
     @include for-desktop-up {
       text-align: left;
-      grid-area: 1 / 3 / 2 / 4;
-      height: 20.375rem;
+      grid-area:  1 / 3 / 3 / 4;;
+      height: unset;
       margin-bottom: 0rem;
-      transform: translateY(7.875rem);
+      margin-top: auto;
+      margin-left:auto;
     }
     
     > h1 {
@@ -300,6 +340,7 @@
         font-size: 0.875rem;
         width: 21.875rem;
         line-height: 1.5625rem;
+        margin-bottom: 1.5rem;
       }
       &:last-child {
         opacity: 0.5;
@@ -320,7 +361,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-column-gap: 0.6875rem;
-      grid-area: 3 / 1 / 4 / 4;
+      grid-area: 4 / 1 / 5 / 4;
+      height: auto;
+      padding-bottom: 3.5rem;
     }
 
 
@@ -346,9 +389,8 @@
       }
 
       @include for-desktop-up {
-        height: 128px;
+        height: 8rem;
         flex-direction: column;
-        width: 255px;
         justify-content: space-evenly;
         align-items: baseline;
       }
@@ -373,8 +415,8 @@
         letter-spacing: -0.046875rem;
         line-height: 1.9375rem;
         @include for-desktop-up {
-          font-size: 40px;
-          line-height: 52px;
+          font-size: 2.5rem;
+          line-height: 3.25rem;
         }
       }
     }

@@ -86,8 +86,8 @@ ul ul li {
 
 @media (min-width: 1200px) {
   .container__px {
-    padding-left: 165px;
-    padding-right: 165px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -185,13 +185,18 @@ ul ul li {
             filter: blur(0);
     opacity: 1;
   }
+  40% {
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
+    opacity: 0.5;
+  }
   100% {
     -webkit-transform: translateX(1000px) scaleX(2) scaleY(0.2);
             transform: translateX(1000px) scaleX(2) scaleY(0.2);
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
+    -webkit-filter: blur(60px);
+            filter: blur(60px);
     opacity: 0;
   }
 }
@@ -206,20 +211,25 @@ ul ul li {
             filter: blur(0);
     opacity: 1;
   }
+  40% {
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
+    opacity: 0.5;
+  }
   100% {
     -webkit-transform: translateX(1000px) scaleX(2) scaleY(0.2);
             transform: translateX(1000px) scaleX(2) scaleY(0.2);
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
+    -webkit-filter: blur(60px);
+            filter: blur(60px);
     opacity: 0;
   }
 }
 
 .slide-out-blurred-right {
-  -webkit-animation: slide-out-blurred-right 0.45s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
-          animation: slide-out-blurred-right 0.45s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+  -webkit-animation: slide-out-blurred-right 0.35s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+          animation: slide-out-blurred-right 0.35s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
 }
 
 .slide-in-blurred-left {
@@ -467,8 +477,11 @@ ul ul li {
     display: grid;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 1.875rem;
+    grid-row-gap: 0.75rem;
+    height: calc(100% - 5.6875rem);
   }
 }
 
@@ -478,10 +491,23 @@ ul ul li {
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr auto;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 0rem;
     grid-row-gap: 0rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    padding-left: 10.3125rem;
+    padding-right: 10.3125rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .content > nav {
+    display: none;
   }
 }
 
@@ -512,16 +538,12 @@ ul ul li {
   .content__information-links {
     display: unset;
     width: unset;
-    -webkit-transform: unset;
-            transform: unset;
-    -ms-grid-row: 2;
+    margin-left: auto;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
-    grid-area: 2 / 3 / 3 / 4;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    grid-area: 3 / 3 / 4 / 4;
   }
 }
 
@@ -588,12 +610,6 @@ ul ul li {
 .content__information-links > nav > ul > li > span {
   opacity: 0.5;
   margin-right: 1.0625rem;
-}
-
-@media (min-width: 600px) {
-  .content > nav {
-    display: none;
-  }
 }
 
 .content__links {
@@ -732,12 +748,12 @@ ul ul li {
 @media (min-width: 1200px) {
   .content__image-wrapper {
     -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
+    -ms-grid-row-span: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
-    grid-area: 1 / 1 / 3 / 3;
+    grid-area: 1 / 1 / 4 / 3;
     padding: 0rem;
-    height: 47.125rem;
+    height: 100%;
   }
 }
 
@@ -746,10 +762,17 @@ ul ul li {
   height: 6.9375rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-mercury {
     width: 11.5rem;
     height: 11.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-mercury {
+    width: 18.125rem;
+    height: 18.125rem;
   }
 }
 
@@ -758,10 +781,17 @@ ul ul li {
   height: 9.625rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-venus {
     width: 15.8125rem;
     height: 15.8125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-venus {
+    width: 25rem;
+    height: 25rem;
   }
 }
 
@@ -770,10 +800,17 @@ ul ul li {
   height: 10.8125rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-earth {
     width: 17.8125rem;
     height: 17.8125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-earth {
+    width: 28.125rem;
+    height: 28.125rem;
   }
 }
 
@@ -782,10 +819,17 @@ ul ul li {
   height: 8.0625rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-mars {
     width: 13.3125rem;
     height: 13.3125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-mars {
+    width: 21rem;
+    height: 21rem;
   }
 }
 
@@ -794,10 +838,17 @@ ul ul li {
   height: 14rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-jupiter {
     width: 23.0625rem;
     height: 23.0625rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-jupiter {
+    width: 36.375rem;
+    height: 36.375rem;
   }
 }
 
@@ -806,10 +857,17 @@ ul ul li {
   height: 16rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-saturn {
     width: 26.375rem;
     height: 26.375rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-saturn {
+    width: 41.630625rem;
+    height: 41.630625rem;
   }
 }
 
@@ -818,10 +876,17 @@ ul ul li {
   height: 11rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-uranus {
     width: 18.125rem;
     height: 18.125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-uranus {
+    width: 28.625rem;
+    height: 28.625rem;
   }
 }
 
@@ -830,10 +895,17 @@ ul ul li {
   height: 10.8125rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .content__image-wrapper-neptune {
     width: 17.8125rem;
     height: 17.8125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content__image-wrapper-neptune {
+    width: 28.125rem;
+    height: 28.125rem;
   }
 }
 
@@ -865,14 +937,14 @@ ul ul li {
   .content__planet-text {
     text-align: left;
     -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
+    -ms-grid-row-span: 2;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
-    grid-area: 1 / 3 / 2 / 4;
-    height: 20.375rem;
+    grid-area: 1 / 3 / 3 / 4;
+    height: unset;
     margin-bottom: 0rem;
-    -webkit-transform: translateY(7.875rem);
-            transform: translateY(7.875rem);
+    margin-top: auto;
+    margin-left: auto;
   }
 }
 
@@ -919,6 +991,7 @@ ul ul li {
     font-size: 0.875rem;
     width: 21.875rem;
     line-height: 1.5625rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -946,11 +1019,13 @@ ul ul li {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 0.6875rem;
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
-    grid-area: 3 / 1 / 4 / 4;
+    grid-area: 4 / 1 / 5 / 4;
+    height: auto;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -998,12 +1073,11 @@ ul ul li {
 
 @media (min-width: 1200px) {
   .content__planet-facts-wrapper {
-    height: 128px;
+    height: 8rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 255px;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
@@ -1038,8 +1112,8 @@ ul ul li {
 
 @media (min-width: 1200px) {
   .content__planet-facts-wrapper > span {
-    font-size: 40px;
-    line-height: 52px;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
   }
 }
 

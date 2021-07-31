@@ -54,7 +54,7 @@ ul ul li {
 // spacing
 .container {
   margin: 0 auto;
-
+  
   &__pt {
     padding-top: 1rem;
   }
@@ -80,8 +80,8 @@ ul ul li {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     @include for-desktop-up {
-      padding-left: 165px;
-      padding-right: 165px;
+      padding-left: 0px;
+      padding-right: 0px;
       
     }
   }
