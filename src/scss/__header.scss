@@ -1,6 +1,10 @@
 .header {
   position: relative;
-
+  > nav {
+    @include for-desktop-up {
+      padding: 22px 42px 27px 32px;
+    }
+  }
   nav > h1 {
     font-family: 'Antonio', sans-serif;
     line-height: 2.25rem;
@@ -12,7 +16,7 @@
     > h1 {
       padding-bottom: 0rem;
     }
-    @include for-tablet-up() {
+    @include for-only-tablet {
       flex-direction: column;
       > h1 {
         padding-bottom: 2.4375rem;

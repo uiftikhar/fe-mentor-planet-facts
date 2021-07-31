@@ -79,6 +79,11 @@ ul ul li {
   &__px {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    @include for-desktop-up {
+      padding-left: 165px;
+      padding-right: 165px;
+      
+    }
   }
 
   &__p-all {

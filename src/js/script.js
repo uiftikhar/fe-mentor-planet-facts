@@ -30,15 +30,16 @@ window.addEventListener('hashchange', () => {
     contentLinks.forEach((link, index) => {
       link.classList = '';
       if(index === 0) {
-        link.classList.add(`content__links-active-${planetKey}`)
+        link.classList.add(`content__links-active-${planetKey}`);
         link.classList.add('active')
       }
     })    
     contentLinksTablet.forEach((link, index) => {
       link.classList = '';
       if(index === 0) {
-        link.classList.add(`content__information-links-active-${planetKey}`)
-        link.classList.add('active')
+        link.classList.add(`content__information-links-active-${planetKey}`);
+        link.classList.add('active');
+        link.classList.add('background-fade');
       }
     })    
   }
@@ -67,6 +68,21 @@ const updatePlanetImage = (key, planet) => {
   planetImage.classList.add(classToAdd);
   planetImage.setAttribute("src", src);
   planetImage.setAttribute("alt", key);
+
+  // const slideOutAnimated = document.querySelector('.slide-out-blurred-right');
+  // slideOutAnimated.addEventListener('animationend', () => {
+  //   planetImage.classList.remove('slide-out-blurred-right');
+  //   planetImage.setAttribute("src", src);
+  //   planetImage.setAttribute("alt", key);
+  //   planetImage.classList.add('slide-in-blurred-left');
+  //   const slideInAnimated = document.querySelector('.slide-in-blurred-left');
+  //   planetImage.classList.add(classToAdd);
+
+  //   slideInAnimated.addEventListener('animationend', () => {
+  //     console.log(planetImage.classList, planetImage);
+  //     // planetImage.classList.remove('slide-in-blurred-left');
+  //   })
+  // });
 }
 
 contentLinks.forEach(link => {
@@ -80,6 +96,7 @@ contentLinks.forEach(link => {
     } else {
       const key = link.innerHTML.toLowerCase() === 'surface' ? 'geology' : link.innerHTML.toLowerCase();
       link.classList.add('active')
+      link.classList.add('background-fade');
       planetContentData.innerHTML = currentPlanet[key].content;
       planetContentSource.href = currentPlanet[key].source;
     }
@@ -94,10 +111,12 @@ contentLinksTablet.forEach(link => {
     })
     link.classList.add(`content__information-links-active-${planetKey}`)
     if(link.classList.contains('active')) {
-      link.classList.remove('active')
+      link.classList.remove('active');
     } else {
       const key = url.innerHTML.toLowerCase() === 'surface' ? 'geology' : url.innerHTML.toLowerCase();
-      link.classList.add('active')
+      link.classList.add('active');
+      link.classList.add('background-fade');
+
       console.log(key, currentPlanet[key])
       planetContentData.innerHTML = currentPlanet[key].content;
       planetContentSource.href = currentPlanet[key].source;
