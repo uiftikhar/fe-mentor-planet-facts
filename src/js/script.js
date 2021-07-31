@@ -48,7 +48,6 @@ window.addEventListener('hashchange', () => {
 const updatePlanetContent = () => {
   planetTitle.innerHTML = currentPlanet.name;
   planetContentData.innerHTML = currentPlanet.overview.content;
-  console.log(planetContentSource.querySelector('a'));
   const source = planetContentSource.querySelector('a')
   source.href = currentPlanet.overview.source;
 }
@@ -60,29 +59,21 @@ const updatePlanetFacts = () => {
   temperature.innerHTML = currentPlanet.temperature;
 }
 
-const updatePlanetImage = (key, planet) => {
+const updatePlanetImage = (key) => {
   const classToAdd = `content__image-wrapper-${key}`;
-  const classToRemove = planetImage.className;
   const src = currentPlanet.images.planet;
-  planetImage.classList.remove(classToRemove);
-  planetImage.classList.add(classToAdd);
-  planetImage.setAttribute("src", src);
-  planetImage.setAttribute("alt", key);
-
-  // const slideOutAnimated = document.querySelector('.slide-out-blurred-right');
-  // slideOutAnimated.addEventListener('animationend', () => {
-  //   planetImage.classList.remove('slide-out-blurred-right');
-  //   planetImage.setAttribute("src", src);
-  //   planetImage.setAttribute("alt", key);
-  //   planetImage.classList.add('slide-in-blurred-left');
-  //   const slideInAnimated = document.querySelector('.slide-in-blurred-left');
-  //   planetImage.classList.add(classToAdd);
-
-  //   slideInAnimated.addEventListener('animationend', () => {
-  //     console.log(planetImage.classList, planetImage);
-  //     // planetImage.classList.remove('slide-in-blurred-left');
-  //   })
-  // });
+  planetImage.classList.add('slide-out-blurred-right');
+  const slideOutAnimated = document.querySelector('.slide-out-blurred-right');
+  slideOutAnimated.addEventListener('animationend', () => {
+    planetImage.className = '';
+    planetImage.classList.add('slide-in-blurred-left',classToAdd);
+    planetImage.setAttribute("src", src);
+    planetImage.setAttribute("alt", key);
+    const slideInAnimated = document.querySelector('.slide-in-blurred-left');
+    slideInAnimated.addEventListener('animationend', () => {
+      planetImage.classList.remove('slide-in-blurred-left');
+    });
+  });
 }
 
 contentLinks.forEach(link => {
