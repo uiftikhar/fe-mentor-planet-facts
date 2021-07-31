@@ -46,7 +46,17 @@ window.addEventListener('hashchange', () => {
 });
 
 const updatePlanetContent = () => {
-  planetTitle.innerHTML = currentPlanet.name;
+  planetTitle.classList.add('blur-out-expand');
+  const expandAnimation = document.querySelector('.blur-out-expand');
+  expandAnimation.addEventListener('animationend', () => {
+    planetTitle.className = '';
+    planetTitle.innerHTML = currentPlanet.name;
+    planetTitle.classList.add('focus-in-contract');
+    const contractInAnimation = document.querySelector('.focus-in-contract');
+    contractInAnimation.addEventListener('animationend', () => {
+      planetTitle.classList.remove('focus-in-contract');
+    })
+  });
   planetContentData.innerHTML = currentPlanet.overview.content;
   const source = planetContentSource.querySelector('a')
   source.href = currentPlanet.overview.source;

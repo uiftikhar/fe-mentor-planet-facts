@@ -9,16 +9,19 @@ html {
     margin: 0; padding: 0;
 }
 
+
 body {
     font-family: 'Spartan', sans-serif;
     
     font-size: 0.875rem;
-    background: url(/assets/background-stars.svg) center/cover no-repeat;
+    background-image: url(/assets/background-stars.svg);
     line-height: 1.5625rem;
     font-weight: 400;
     background-color: $primary-bg;
     color: $font-primary;
     height: 100vh;
+    // animation: 0.5s linear 0s ease-in-out forwards infinite animate;
+    // animation: animate 2s linear 0s infinite forwards ;
 }
 
 // Resets ----------------
@@ -51,10 +54,52 @@ ul ul li {
    line-height: 0;
 }
 
+// .active {
+//   &-mercury  {
+//     @include mobile-nav($steelBlue) { 
+//       content: '';
+//     }
+//   }
+//   &-venus  {
+//     @include mobile-nav($lightOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-earth  {
+//     @include mobile-nav($darkPurple) { 
+//       content: '';
+//     }
+//   }
+//   &-mars  {
+//     @include mobile-nav($lightRedOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-jupiter  {
+//     @include mobile-nav($darkRedOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-saturn  {
+//     @include mobile-nav($darkOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-uranus  {
+//     @include mobile-nav($cyan) { 
+//       content: '';
+//     }
+//   }
+//   &-neptune  {
+//     @include mobile-nav($oceanBlue) { 
+//       content: '';
+//     }
+//   }
+// }
+
 // spacing
 .container {
   margin: 0 auto;
-  
   &__pt {
     padding-top: 1rem;
   }

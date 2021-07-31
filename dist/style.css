@@ -15,7 +15,7 @@ html {
 body {
   font-family: 'Spartan', sans-serif;
   font-size: 0.875rem;
-  background: url(/assets/background-stars.svg) center/cover no-repeat;
+  background-image: url(/assets/background-stars.svg);
   line-height: 1.5625rem;
   font-weight: 400;
   background-color: #070724;
@@ -342,6 +342,80 @@ ul ul li {
   }
 }
 
+.blur-out-expand {
+  -webkit-animation: blur-out-expand 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: blur-out-expand 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes blur-out-expand {
+  0% {
+    -webkit-filter: blur(0.01);
+            filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: 0.25em;
+    -webkit-filter: blur(12px) opacity(0%);
+            filter: blur(12px) opacity(0%);
+  }
+}
+
+@keyframes blur-out-expand {
+  0% {
+    -webkit-filter: blur(0.01);
+            filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: 0.25em;
+    -webkit-filter: blur(12px) opacity(0%);
+            filter: blur(12px) opacity(0%);
+  }
+}
+
+.focus-in-contract {
+  -webkit-animation: focus-in-contract 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: focus-in-contract 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes focus-in-contract {
+  0% {
+    letter-spacing: 0.25em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 0.25em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animate {
+  to {
+    background-position: -100vw;
+  }
+}
+
+@keyframes animate {
+  to {
+    background-position: -100vw;
+  }
+}
+
 .header {
   position: relative;
 }
@@ -403,7 +477,104 @@ ul ul li {
 }
 
 .header .planets-nav > a:not(:last-child) {
+  position: relative;
   margin-right: 2.0625rem;
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-mercury::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #419EBB;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-venus::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #EDA249;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-earth::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #6D2ED5;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-mars::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #D14C32;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-jupiter::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #D83A34;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-saturn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #CD5120;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-uranus::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #1EC2A4;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .planets-nav-active-neptune::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: -37px;
+    left: 0;
+    background-color: #2D68F0;
+  }
 }
 
 @media (min-width: 600px) {
@@ -960,6 +1131,7 @@ ul ul li {
     font-size: 5rem;
     line-height: 6.5rem;
     margin-bottom: 1.4375rem;
+    max-width: 350px;
   }
 }
 

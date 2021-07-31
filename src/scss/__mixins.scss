@@ -38,3 +38,17 @@ $planet-colors: $mercury, $venus, $earth, $mars, $jupiter, $saturn, $uranus, $ne
     background-color: $backgroundColor;
   }
 }
+
+@mixin desktop-nav-highlight($backgroundColor) {
+  @include for-desktop-up {
+    &::before {
+      @content;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      top: -37px;
+      left: 0;
+      background-color: $backgroundColor;
+    }
+  }
+}

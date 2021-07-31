@@ -36,7 +36,51 @@
       display: inline-block;
     }
     > a:not(:last-child) {
+      position: relative;
       margin-right: 2.0625rem;
+    }
+
+    &-active {
+      &-mercury  {
+        @include desktop-nav-highlight($steelBlue) { 
+          content: '';
+        }
+      }
+      &-venus  {
+        @include desktop-nav-highlight($lightOrange) { 
+          content: '';
+        }
+      }
+      &-earth  {
+        @include desktop-nav-highlight($darkPurple) { 
+          content: '';
+        }
+      }
+      &-mars  {
+        @include desktop-nav-highlight($lightRedOrange) { 
+          content: '';
+        }
+      }
+      &-jupiter  {
+        @include desktop-nav-highlight($darkRedOrange) { 
+          content: '';
+        }
+      }
+      &-saturn  {
+        @include desktop-nav-highlight($darkOrange) { 
+          content: '';
+        }
+      }
+      &-uranus  {
+        @include desktop-nav-highlight($cyan) { 
+          content: '';
+        }
+      }
+      &-neptune  {
+        @include desktop-nav-highlight($oceanBlue) { 
+          content: '';
+        }
+      }
     }
   }
   h1 {

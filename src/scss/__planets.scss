@@ -120,7 +120,7 @@
       left: 0;
       opacity: 0.2;
       background-color: $font-primary;
-    }
+  }
   
     > li > a {
       position: relative;      
@@ -321,6 +321,7 @@
         font-size: 5rem;
         line-height: 6.5rem;
         margin-bottom: 1.4375rem;
+        max-width: 350px;
       }
       @include for-only-tablet {
         font-size: 3rem;
