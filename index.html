@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="dist/style.css">
   <title>Frontend Mentor | Planets fact site</title>
@@ -12,24 +11,86 @@
   <header class="header">
     <nav class="flex flex-ai-c flex-jc-sb container container__p-all">
       <h1>THE PLANETS</h1>
-      <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+      <section id="tablet-navigation" class="planets-nav">
+        <a href="#mercury">MERCURY</a>
+        <a href="#venus">VENUS</a>
+        <a href="#earth">EARTH</a>
+        <a href="#mars">MARS</a>
+        <a href="#jupiter">JUPITER</a>
+        <a href="#saturn">SATURN</a>
+        <a href="#uranus">URANUS</a>
+        <a href="#neptune">NEPTUNE</a>
+      </section>
+      <a id="btnHamburger" class="header__toggle">
         <span></span>
         <span></span>
         <span></span>
       </a>
     </nav>
   </header>
+  <article class="content desktop-view tablet-view">
+    <nav>
+      <ul id="content-links" class="content__links flex flex-jc-sb">
+        <li><a class="active content__links-active-mercury">OVERVIEW</a></li>
+        <li><a>STRUCTURE</a></li>
+        <li><a>SURFACE</a></li>
+      </ul>
+    </nav>
+    <section id="planet-image" class="content__image-wrapper container__px">
+      <img class="content__image-wrapper-mercury" src="/assets/planet-mercury.svg" alt="mercury"/>
+    </section>
+    <section id='planet-content' class="content__planet-text container__px">
+      <h1>Mercury</h1>
+      <p>Mercury is the smallest planet in the Solar System and the closest 
+        to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
+        shortest of all the Sun's planets. Mercury is one of four terrestrial 
+        planets in the Solar System, and is a rocky body like Earth.
+      </p>
+      <p class="flex flex-ai-c flex-jc-c">
+        Source :&nbsp;<a class="flex flex-jc-c" href="#">Wikipedia<img src="./assets/link.svg"/></a> 
+      </p>
+    </section>
+    <section class="content__information-links container__px">
+      <nav>
+        <ul id="tablet-links">
+          <li><span>01</span><a>OVERVIEW</a></li>
+           <li><span>02</span><a>STRUCTURE</a></li>
+          <li><span>03</span><a>SURFACE</a></li> 
+        </ul>
+      </nav>
+    </section>
+    <section id="planet-facts" class="content__planet-facts container__px">
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>ROTATION TIME</h4>
+        <span>58.6 DAYS</span>
+      </section>
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>REVOLUTION TIME</h4>
+        <span>58.6 DAYS</span>
+      </section>
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>RADIUS</h4>
+        <span>2,439.7KM</span>
+      </section>
+      <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
+        <h4>AVERAGE TEMP.</h4>
+        <span>430&#176;C</span>
+      </section>
+    </section>
+
+  </article>
+  
   <div class="side-drawer">
-    <a href="#mercury"><span>MERCURY</span></a>
-    <a href="#venus"><span>VENUS</span></a>
-    <a href="#earth"><span>EARTH</span></a>
-    <a href="#mars"><span>MARS</span></a>
-    <a href="#jupiter"><span>JUPITER</span></a>
-    <a href="#saturn"><span>SATURN</span></a>
-    <a href="#uranus"><span>URANUS</span></a>
-    <a href="#neptune"><span>NEPTUNE</span></a>
+    <a  href="#mercury"><span>MERCURY</span></a>
+    <a  href="#venus"><span>VENUS</span></a>
+    <a  href="#earth"><span>EARTH</span></a>
+    <a  href="#mars"><span>MARS</span></a>
+    <a  href="#jupiter"><span>JUPITER</span></a>
+    <a  href="#saturn"><span>SATURN</span></a>
+    <a  href="#uranus"><span>URANUS</span></a>
+    <a  href="#neptune"><span>NEPTUNE</span></a>
   </div>
- 
-  <script src="src/js/script.js"></script>
+  <script type="module" src="data.js"></script>
+  <script type="module" src="src/js/script.js"></script>
 </body>
 </html>

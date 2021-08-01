@@ -1,0 +1,425 @@
+.desktop-view {
+    @include for-desktop-up {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 1.875rem;
+      grid-row-gap: 0.75rem;
+      height: calc(100% - 5.6875rem);
+    }
+  }
+  .tablet-view {
+    @include for-only-tablet {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 0rem;
+        grid-row-gap: 0rem;
+    }
+  }
+  
+
+.content {
+
+  @include for-desktop-up {
+    padding-left: 10.3125rem;
+    padding-right: 10.3125rem;
+  }
+  > nav {
+    @include for-tablet-up {
+      display: none;
+    }
+  }
+  
+  &__information-links {
+    display: none;
+    @include for-only-tablet {
+      grid-area: 4 / 3 / 6 / 5; 
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    @include for-desktop-up {
+      display: unset;
+      width: unset;
+      margin-left:auto;
+      grid-area: 3 / 3 / 4 / 4;
+    }
+    @include for-tablet-up {
+      &-active {
+        &-mercury  {            
+          background-color: $steelBlue;
+          border: 0.0625rem solid rgba($white, 0.5);
+          }
+          &-venus  {            
+              background-color: $lightOrange;
+              border: none;
+          }
+          &-earth  {            
+              background-color: $darkPurple;
+              border: none;
+          }  
+          &-mars  {            
+              background-color: $lightRedOrange;
+              border: none;
+          }
+          &-jupiter  {            
+              background-color: $darkRedOrange;
+              border: none;
+          }
+          &-saturn  {            
+              background-color: $darkOrange;
+              border: none;
+          }
+          &-uranus  {            
+              background-color: $cyan;
+              border: none;
+          }
+          &-neptune  {            
+              background-color: $oceanBlue;
+              border: none;
+          }            
+        }
+      }
+      > nav {
+        > ul {
+          display: inline-block;
+          :not(:last-child) {
+            margin-bottom: 1rem;
+          }
+          > li {
+            display: block;
+            border: 0.0625rem solid rgba($white, 0.5);
+            padding: 0.4375rem 1.25rem;
+            font-size: 0.5625rem;            
+            font-weight: bold;
+            letter-spacing: 0.120535625rem;
+            line-height: 1.5625rem;
+            width: 17.5625rem;
+            @include for-desktop-up {
+              width: 21.875rem;
+            }
+            > span {
+              opacity: 0.5;
+              margin-right: 1.0625rem;
+            }
+        }
+      }
+    }
+  }
+ 
+  &__links {
+    position: relative;
+    padding: 1.25rem 1.5rem;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0.0625rem;
+      bottom: 0;
+      left: 0;
+      opacity: 0.2;
+      background-color: $font-primary;
+  }
+  
+    > li > a {
+      position: relative;      
+      font-size: 0.5625rem;
+      line-height: 0.625rem;
+      letter-spacing: 0.120535625rem;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
+      }
+    }
+    &-active {
+      &-mercury  {
+        @include mobile-nav($steelBlue) { 
+          content: '';
+        }
+      }
+      &-venus  {
+        @include mobile-nav($lightOrange) { 
+          content: '';
+        }
+      }
+      &-earth  {
+        @include mobile-nav($darkPurple) { 
+          content: '';
+        }
+      }
+      &-mars  {
+        @include mobile-nav($lightRedOrange) { 
+          content: '';
+        }
+      }
+      &-jupiter  {
+        @include mobile-nav($darkRedOrange) { 
+          content: '';
+        }
+      }
+      &-saturn  {
+        @include mobile-nav($darkOrange) { 
+          content: '';
+        }
+      }
+      &-uranus  {
+        @include mobile-nav($cyan) { 
+          content: '';
+        }
+      }
+      &-neptune  {
+        @include mobile-nav($oceanBlue) { 
+          content: '';
+        }
+      }
+    }
+  
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19rem;
+    @include for-only-tablet {
+      grid-area: 1 / 1 / 4 / 5;
+      height: 28.75rem
+    }
+    @include for-desktop-up {
+      grid-area: 1 / 1 / 4 / 3;
+      padding: 0rem;
+      height: 100%;
+    }
+    &-mercury {
+      width: 6.9375rem;
+      height: 6.9375rem;
+      @include for-only-tablet {
+        width: 11.5rem;
+        height: 11.5rem;
+      }
+      @include for-desktop-up {
+        width: 18.125rem;
+        height: 18.125rem;
+      }
+    }
+    &-venus {
+      width: 9.625rem;
+      height: 9.625rem;
+      @include for-only-tablet {
+        width: 15.8125rem;
+        height: 15.8125rem;
+      }
+      @include for-desktop-up {
+        width: 25rem;
+        height: 25rem;
+      }
+    }
+    &-earth {
+      width: 10.8125rem;
+      height: 10.8125rem;
+      @include for-only-tablet {
+        width: 17.8125rem;
+        height: 17.8125rem;
+      }
+      @include for-desktop-up {
+        width: 28.125rem;
+        height: 28.125rem;
+      }
+    }
+    &-mars {
+      width: 8.0625rem;
+      height: 8.0625rem;
+      @include for-only-tablet {
+        width: 13.3125rem;
+        height: 13.3125rem;
+      }
+      @include for-desktop-up {
+        width: 21rem;
+        height: 21rem;
+      }
+    }
+
+    
+    &-jupiter {
+      width: 14rem;
+      height: 14rem;
+      @include for-only-tablet {
+        width: 23.0625rem;
+        height: 23.0625rem;
+      }
+      @include for-desktop-up {
+        width: 36.375rem;
+        height: 36.375rem;
+      }
+    }
+    &-saturn {
+      width: 16rem;
+      height: 16rem;
+      @include for-only-tablet {
+        width: 26.375rem;
+        height: 26.375rem;
+      }
+      @include for-desktop-up {
+        width: 41.630625rem;
+        height: 41.630625rem;
+      }
+    }
+    &-uranus {
+      width: 11rem;
+      height: 11rem;
+      @include for-only-tablet {
+        width: 18.125rem;
+        height: 18.125rem;
+      }
+      @include for-desktop-up {
+        width: 28.625rem;
+        height: 28.625rem;
+      }
+    }
+    &-neptune {
+      width: 10.8125rem;
+      height: 10.8125rem;
+      @include for-only-tablet {
+        width: 17.8125rem;
+        height: 17.8125rem;
+      }
+      @include for-desktop-up {
+        width: 28.125rem;
+        height: 28.125rem;
+      }
+    }
+  }
+
+  &__planet-text {
+    text-align: center;
+    height: 14.6875rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.75rem;
+    @include for-only-tablet {
+      grid-area: 4 / 1 / 6 / 3;
+      text-align: left;
+    }
+      
+    @include for-desktop-up {
+      text-align: left;
+      grid-area:  1 / 3 / 3 / 4;;
+      height: unset;
+      margin-bottom: 0rem;
+      margin-top: auto;
+      margin-left:auto;
+    }
+    
+    > h1 {
+      font-family: 'Antonio', sans-serif;
+      font-size: 2.5rem;
+      line-height: 3.25rem;
+      margin-bottom: 1rem;
+      @include for-desktop-up {
+        font-size: 5rem;
+        line-height: 6.5rem;
+        margin-bottom: 1.4375rem;
+        max-width: 350px;
+      }
+      @include for-only-tablet {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+    }
+    > p {
+      font-size: 0.6875rem;
+      line-height: 1.5625rem;
+      font-weight: 400;
+      line-height: 1.375rem;
+      opacity: 0.7;
+      @include for-tablet-up {
+        justify-content: flex-start;
+      }
+      @include for-desktop-up {
+        font-size: 0.875rem;
+        width: 21.875rem;
+        line-height: 1.5625rem;
+        margin-bottom: 1.5rem;
+      }
+      &:last-child {
+        opacity: 0.5;
+        margin-top: auto;
+        a {
+          text-decoration: underline;
+          img {
+            margin-left: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__planet-facts {
+    height: 13.5rem;
+    @include for-tablet-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-column-gap: 0.6875rem;
+      grid-area: 4 / 1 / 5 / 4;
+      height: auto;
+      padding-bottom: 3.5rem;
+    }
+
+
+
+    @include for-only-tablet {
+      grid-area:  6 / 1 / 7 / 5;
+    }
+    &-wrapper:not(:last-child) {
+      margin-bottom: 0.5rem;
+      @include for-tablet-up {
+        margin-bottom: 0rem;
+      }
+    }
+    &-wrapper {
+      mix-blend-mode: normal;
+      height: 3rem;
+      @include for-only-tablet {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0rem;
+        padding: 1rem;
+        height: 5.5rem;
+      }
+
+      @include for-desktop-up {
+        height: 8rem;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: baseline;
+      }
+
+      border: 0.0625rem solid rgba($color: $white, $alpha: 0.2);
+      padding: 0rem 1.4375rem 0rem 1.4375rem;
+      > h4 {
+        opacity: 0.5;
+        display: inline;
+        font-size: 0.5rem;
+        line-height: 1rem;
+        font-weight: bold;
+        letter-spacing: 0.00284091015625rem;
+        @include for-only-tablet {
+          padding-bottom: 0.375rem;
+        }
+      }
+      > span {
+        font-family: 'Antonio';
+        color: $white;
+        font-size: 1.25rem;
+        letter-spacing: -0.046875rem;
+        line-height: 1.9375rem;
+        @include for-desktop-up {
+          font-size: 2.5rem;
+          line-height: 3.25rem;
+        }
+      }
+    }
+  }
+}

@@ -9,20 +9,25 @@ html {
     margin: 0; padding: 0;
 }
 
+
 body {
     font-family: 'Spartan', sans-serif;
-    font-size: 14px;
-    background: url(/assets/background-stars.svg) center/cover no-repeat;
-    line-height: 25px;
+    
+    font-size: 0.875rem;
+    background-image: url(/assets/background-stars.svg);
+    line-height: 1.5625rem;
     font-weight: 400;
     background-color: $primary-bg;
     color: $font-primary;
     height: 100vh;
+    // animation: 0.5s linear 0s ease-in-out forwards infinite animate;
+    // animation: animate 2s linear 0s infinite forwards ;
 }
 
+// Resets ----------------
 h1, h2, h3, h4, p {
   margin: 0;
-  padding: 0;;
+  padding: 0;
 }
 
 a {
@@ -30,24 +35,73 @@ a {
   text-decoration: inherit; /* no underline */
 }
 
-// Visibility
-.hide-for-mobile {
-  @include breakpoint-down(medium) {
-    display: none;
-  }
+
+button,
+input {
+  font-family: 'Spartan', sans-serif;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: $white;
+}
+ul,
+ul li,
+ul ul li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style-type: none;
+   line-height: 0;
 }
 
-.hide-for-desktop {
-  @include breakpoint-up(large) {
-    display: none;
-  }
-}
+// .active {
+//   &-mercury  {
+//     @include mobile-nav($steelBlue) { 
+//       content: '';
+//     }
+//   }
+//   &-venus  {
+//     @include mobile-nav($lightOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-earth  {
+//     @include mobile-nav($darkPurple) { 
+//       content: '';
+//     }
+//   }
+//   &-mars  {
+//     @include mobile-nav($lightRedOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-jupiter  {
+//     @include mobile-nav($darkRedOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-saturn  {
+//     @include mobile-nav($darkOrange) { 
+//       content: '';
+//     }
+//   }
+//   &-uranus  {
+//     @include mobile-nav($cyan) { 
+//       content: '';
+//     }
+//   }
+//   &-neptune  {
+//     @include mobile-nav($oceanBlue) { 
+//       content: '';
+//     }
+//   }
+// }
+
 // spacing
 .container {
   margin: 0 auto;
-
   &__pt {
-    padding-top: 1rem;;
+    padding-top: 1rem;
   }
 
   &__pr {
@@ -55,7 +109,7 @@ a {
   }
 
   &__pb {
-    padding-bottom: 1rem;;
+    padding-bottom: 1rem;
   }
 
   &__pl {
@@ -63,18 +117,23 @@ a {
   }
 
   &__py {
-    padding-top: 1rem;; 
-    padding-bottom: 1rem;; 
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
   }
 
   &__px {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    @include for-desktop-up {
+      padding-left: 0px;
+      padding-right: 0px;
+      
+    }
   }
 
   &__p-all {
-    padding-top: 1rem;; 
-    padding-bottom: 1rem;; 
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
