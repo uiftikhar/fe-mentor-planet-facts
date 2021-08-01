@@ -171,7 +171,6 @@ contentLinks.forEach(link => {
 })
 
 contentLinksTablet.forEach(link => {
-  console.log(12);
   link.addEventListener('click', () => {
     const url = link.querySelector('a');
     contentLinksTablet.forEach(otherLink => {
