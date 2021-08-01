@@ -1,14 +1,3 @@
-
-@keyframes spin {
-  0% {background-position: 0 0;}
-  100% {background-position: 630px 0;}
- }
-
- .spin {
-  transition: transform 200ms linear;
-  animation: spin 4s linear infinite; /* This is going to be defined in the next step */
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -30,7 +19,7 @@
     opacity: 0.5;
   }
   100% {
-    transform: translateX(1000px) scaleX(2) scaleY(0.2);
+    transform: translateX(250px) scaleX(2) scaleY(0.2);
     transform-origin: 0% 50%;
     filter: blur(60px);
     opacity: 0;
@@ -88,26 +77,10 @@
   animation: fade-out 200ms ease-in-out forwards;
 }
 
-.obj {
-  // offset-path: path('M.4 84.1s127.4 188 267.7 0 247.3 0 247.3 0');
-  offset-path: path('M0.5,53.06c0.78,13.28,5.77,39.94,37,67.59c11.58,10.25,45.99,40.71,103,51.09,c93.64,17.05,197.3-29.34,278-65.46c45.79-20.49,110.79-54.34,170-105.9');
-
-  animation: move 2000ms linear forwards;
-}
-
-@keyframes move {
-30% {
-  // offset-distance: 0%;
-
-}
-  100% {
-    offset-distance: 100%;
-    // transform: scale(0); 
-  }
-}
 
 .blur-out-expand {
 	animation: blur-out-expand 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  // transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
 }
 @keyframes blur-out-expand {
   0% {

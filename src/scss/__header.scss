@@ -35,9 +35,11 @@
     @include for-tablet-up {
       display: inline-block;
     }
-    > a:not(:last-child) {
+    > a {
       position: relative;
-      margin-right: 2.0625rem;
+      &:not(:last-child) {
+        margin-right: 2.0625rem;
+      }
     }
 
     &-active {
@@ -78,6 +80,7 @@
       }
       &-neptune  {
         @include desktop-nav-highlight($oceanBlue) { 
+          left: 2.0625rem;
           content: '';
         }
       }

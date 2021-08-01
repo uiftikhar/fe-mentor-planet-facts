@@ -129,34 +129,6 @@ ul ul li {
           flex-direction: column;
 }
 
-@-webkit-keyframes spin {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 630px 0;
-  }
-}
-
-@keyframes spin {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 630px 0;
-  }
-}
-
-.spin {
-  -webkit-transition: -webkit-transform 200ms linear;
-  transition: -webkit-transform 200ms linear;
-  transition: transform 200ms linear;
-  transition: transform 200ms linear, -webkit-transform 200ms linear;
-  -webkit-animation: spin 4s linear infinite;
-          animation: spin 4s linear infinite;
-  /* This is going to be defined in the next step */
-}
-
 @-webkit-keyframes fade-in {
   from {
     opacity: 0;
@@ -191,8 +163,8 @@ ul ul li {
     opacity: 0.5;
   }
   100% {
-    -webkit-transform: translateX(1000px) scaleX(2) scaleY(0.2);
-            transform: translateX(1000px) scaleX(2) scaleY(0.2);
+    -webkit-transform: translateX(250px) scaleX(2) scaleY(0.2);
+            transform: translateX(250px) scaleX(2) scaleY(0.2);
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
     -webkit-filter: blur(60px);
@@ -217,8 +189,8 @@ ul ul li {
     opacity: 0.5;
   }
   100% {
-    -webkit-transform: translateX(1000px) scaleX(2) scaleY(0.2);
-            transform: translateX(1000px) scaleX(2) scaleY(0.2);
+    -webkit-transform: translateX(250px) scaleX(2) scaleY(0.2);
+            transform: translateX(250px) scaleX(2) scaleY(0.2);
     -webkit-transform-origin: 0% 50%;
             transform-origin: 0% 50%;
     -webkit-filter: blur(60px);
@@ -318,28 +290,6 @@ ul ul li {
 .fade-out {
   -webkit-animation: fade-out 200ms ease-in-out forwards;
           animation: fade-out 200ms ease-in-out forwards;
-}
-
-.obj {
-  offset-path: path("M0.5,53.06c0.78,13.28,5.77,39.94,37,67.59c11.58,10.25,45.99,40.71,103,51.09,c93.64,17.05,197.3-29.34,278-65.46c45.79-20.49,110.79-54.34,170-105.9");
-  -webkit-animation: move 2000ms linear forwards;
-          animation: move 2000ms linear forwards;
-}
-
-@-webkit-keyframes move {
-  30% {
-  }
-  100% {
-    offset-distance: 100%;
-  }
-}
-
-@keyframes move {
-  30% {
-  }
-  100% {
-    offset-distance: 100%;
-  }
 }
 
 .blur-out-expand {
@@ -476,8 +426,11 @@ ul ul li {
   }
 }
 
-.header .planets-nav > a:not(:last-child) {
+.header .planets-nav > a {
   position: relative;
+}
+
+.header .planets-nav > a:not(:last-child) {
   margin-right: 2.0625rem;
 }
 
@@ -567,6 +520,7 @@ ul ul li {
 
 @media (min-width: 1200px) {
   .header .planets-nav-active-neptune::before {
+    left: 2.0625rem;
     content: '';
     position: absolute;
     width: 100%;
