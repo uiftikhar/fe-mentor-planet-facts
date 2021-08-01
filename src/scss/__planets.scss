@@ -53,31 +53,24 @@
           }
           &-venus  {            
               background-color: $lightOrange;
-              border: none;
           }
           &-earth  {            
               background-color: $darkPurple;
-              border: none;
           }  
           &-mars  {            
               background-color: $lightRedOrange;
-              border: none;
           }
           &-jupiter  {            
               background-color: $darkRedOrange;
-              border: none;
           }
           &-saturn  {            
               background-color: $darkOrange;
-              border: none;
           }
           &-uranus  {            
               background-color: $cyan;
-              border: none;
           }
           &-neptune  {            
               background-color: $oceanBlue;
-              border: none;
           }            
         }
       }
@@ -96,6 +89,12 @@
             letter-spacing: 0.120535625rem;
             line-height: 1.5625rem;
             width: 17.5625rem;
+            cursor: pointer;
+            &:not(.active):hover {
+              background-color: rgba($color: $linkHover, $alpha: 0.2);
+              color: $white;
+              transition: background-color 250ms ease-in-out;
+            }
             @include for-desktop-up {
               width: 21.875rem;
             }

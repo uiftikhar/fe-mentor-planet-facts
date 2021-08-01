@@ -32,10 +32,11 @@ const throttle = function throttle(func, duration) {
     }
   }
 }
+
 window.addEventListener('hashchange', throttle(
     () => {
+      console.log(window.history);
       planetKey =  location.hash.split('#')[1];
-      // add debounce for animation
       if(planets.includes(planetKey.toLowerCase())) {
         currentPlanet = planetData.find(({name}) => name.toLowerCase() === planetKey)
         addStylesToNavHeader()
@@ -62,35 +63,6 @@ window.addEventListener('hashchange', throttle(
       }
     }
   , 1000));
-
-// window.addEventListener('hashchange',  () => {
-//     planetKey =  location.hash.split('#')[1];
-//     // add debounce for animation
-//     if(planets.includes(planetKey.toLowerCase())) {
-//       currentPlanet = planetData.find(({name}) => name.toLowerCase() === planetKey)
-//       addStylesToNavHeader()
-//       updatePlanetImage(planetKey);
-//       updatePlanetContent();
-//       updatePlanetFacts();
-//       sideDrawer.classList.remove('side-drawer__is-opened');
-//       header.classList.remove('open');
-//       contentLinks.forEach((link, index) => {
-//         link.classList = '';
-//         if(index === 0) {
-//           link.classList.add(`content__links-active-${planetKey}`);
-//           link.classList.add('active')
-//         }
-//       })    
-//       contentLinksTablet.forEach((link, index) => {
-//         link.classList = '';
-//         if(index === 0) {
-//           link.classList.add(`content__information-links-active-${planetKey}`);
-//           link.classList.add('active');
-//           link.classList.add('background-fade');
-//         }
-//       })    
-//     }
-//   });
 
 const updatePlanetContent = () => {
   planetTitle.classList.add('blur-out-expand');

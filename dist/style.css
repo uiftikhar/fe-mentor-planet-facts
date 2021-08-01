@@ -435,6 +435,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-mercury {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-mercury::before {
     content: '';
     position: absolute;
@@ -447,6 +451,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-venus {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-venus::before {
     content: '';
     position: absolute;
@@ -459,6 +467,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-earth {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-earth::before {
     content: '';
     position: absolute;
@@ -471,6 +483,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-mars {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-mars::before {
     content: '';
     position: absolute;
@@ -483,6 +499,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-jupiter {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-jupiter::before {
     content: '';
     position: absolute;
@@ -495,6 +515,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-saturn {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-saturn::before {
     content: '';
     position: absolute;
@@ -507,6 +531,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-uranus {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-uranus::before {
     content: '';
     position: absolute;
@@ -519,6 +547,10 @@ ul ul li {
 }
 
 @media (min-width: 1200px) {
+  .header .planets-nav-active-neptune {
+    -webkit-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+  }
   .header .planets-nav-active-neptune::before {
     left: 2.0625rem;
     content: '';
@@ -679,31 +711,24 @@ ul ul li {
   }
   .content__information-links-active-venus {
     background-color: #EDA249;
-    border: none;
   }
   .content__information-links-active-earth {
     background-color: #6D2ED5;
-    border: none;
   }
   .content__information-links-active-mars {
     background-color: #D14C32;
-    border: none;
   }
   .content__information-links-active-jupiter {
     background-color: #D83A34;
-    border: none;
   }
   .content__information-links-active-saturn {
     background-color: #CD5120;
-    border: none;
   }
   .content__information-links-active-uranus {
     background-color: #1EC2A4;
-    border: none;
   }
   .content__information-links-active-neptune {
     background-color: #2D68F0;
-    border: none;
   }
 }
 
@@ -724,6 +749,14 @@ ul ul li {
   letter-spacing: 0.120535625rem;
   line-height: 1.5625rem;
   width: 17.5625rem;
+  cursor: pointer;
+}
+
+.content__information-links > nav > ul > li:not(.active):hover {
+  background-color: rgba(216, 216, 216, 0.2);
+  color: #FFFFFF;
+  -webkit-transition: background-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
 }
 
 @media (min-width: 1200px) {

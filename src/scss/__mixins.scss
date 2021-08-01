@@ -41,6 +41,7 @@ $planet-colors: $mercury, $venus, $earth, $mars, $jupiter, $saturn, $uranus, $ne
 
 @mixin desktop-nav-highlight($backgroundColor) {
   @include for-desktop-up {
+    transition: background-color 250ms ease-in-out;
     &::before {
       @content;
       position: absolute;
