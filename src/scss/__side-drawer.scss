@@ -36,7 +36,7 @@
       font-size: 0.9375rem;
       color: $white;
       &::after {
-        content: url('../../assets/arrow-right.svg');
+        content: url('/assets/arrow-right.svg');
         position: absolute;
         right: 0rem;
       }
