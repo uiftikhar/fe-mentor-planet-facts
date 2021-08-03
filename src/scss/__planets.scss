@@ -7,17 +7,17 @@
       grid-row-gap: 0.75rem;
       height: calc(100% - 5.6875rem);
     }
+}
+.tablet-view {
+  @include for-only-tablet {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-column-gap: 0rem;
+      grid-row-gap: 0rem;
   }
-  .tablet-view {
-    @include for-only-tablet {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        grid-column-gap: 0rem;
-        grid-row-gap: 0rem;
-    }
-  }
-  
+}
+
 
 .content {
   @include for-desktop-up {
@@ -192,6 +192,7 @@
     justify-content: center;
     align-items: center;
     height: 19rem;
+    position: relative;
     @include for-only-tablet {
       grid-area: 1 / 1 / 4 / 5;
       height: 28.75rem
@@ -204,6 +205,7 @@
     &-mercury {
       width: 6.9375rem;
       height: 6.9375rem;
+      position: relative;
       @include for-only-tablet {
         width: 11.5rem;
         height: 11.5rem;

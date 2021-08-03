@@ -938,6 +938,7 @@ ul ul li {
       -ms-flex-align: center;
           align-items: center;
   height: 19rem;
+  position: relative;
 }
 
 @media (min-width: 37.5rem) and (max-width: 74.9375rem) {
@@ -966,6 +967,7 @@ ul ul li {
 .content__image-wrapper-mercury {
   width: 6.9375rem;
   height: 6.9375rem;
+  position: relative;
 }
 
 @media (min-width: 37.5rem) and (max-width: 74.9375rem) {

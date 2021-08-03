@@ -52,6 +52,15 @@ const onTabsClick = (allTabs, currentTab) => {
       currentTab.classList.remove('active')
     } else {
       const key = currentTab.innerHTML.toLowerCase() === 'surface' ? 'geology' : currentTab.innerHTML.toLowerCase();
+      let planetImgSrc = ''
+      if(key === 'geology') {
+        planetImgSrc = `./assets/geology-${activePlanet}.png`;
+      } else if(key==='surface') {
+        planetImgSrc = `./assets/planet-${activePlanet}.svg`;
+      } else {
+        planetImgSrc = `./assets/planet-${activePlanet}-internal.svg`;
+      }
+      planetImage.add
       currentTab.classList.add('active')
       currentTab.classList.add('background-fade');
       planetContentData.innerHTML = currentPlanet[key].content;
@@ -62,11 +71,56 @@ const onTabsClick = (allTabs, currentTab) => {
 
 mobileTabs.forEach(tab => {  onTabsClick(mobileTabs, tab) })
 
-tabletTabs.forEach(tab => { onTabsClick(tabletTabs, tab) });
+tabletTabs.forEach(currentTab => {
+  
+  currentTab.addEventListener('click',function listener() {
+    const geologyPicture = document.querySelector('#geology-picture');
+    if(geologyPicture) geologyPicture.parentNode.removeChild(geologyPicture)
+    tabletTabs.forEach(otherLink => {
+      otherLink.className = '';
+    })
+    currentTab.classList.add(`content__tabs-active-${activePlanet}`)
+    if(currentTab.classList.contains('active')) {
+      currentTab.classList.remove('active')
+    } else {
+      let key;
+      let planetImgSrc = ''
+      if(currentTab.innerHTML.toLowerCase() === 'overview') {
+        key = 'overview'
+        planetImgSrc = `./assets/planet-${activePlanet}.svg`;
+      }
+      if(currentTab.innerHTML.toLowerCase() === 'internal structure') {
+        key = 'structure'
+        planetImgSrc = `./assets/planet-${activePlanet}-internal.svg`;
+      }
+      if(currentTab.innerHTML.toLowerCase() === 'surface geology') {
+        key = 'geology'
+        planetImgSrc = `./assets/planet-${activePlanet}.svg`;
+        const elem = document.createElement("img");
+        elem.setAttribute("src", `./assets/geology-${activePlanet}.png`);
+        elem.setAttribute("height", "199");
+        elem.setAttribute("width", "163");
+        elem.id=  "geology-picture";
+        elem.style.position = 'absolute';
+        elem.style.bottom = '0px';
+        elem.setAttribute("alt", `${activePlanet}-geology`);
+        document.querySelector('#planet-image').appendChild(elem);
+        planetImage.classList.add(`content__image-wrapper-${activePlanet}-geology`);
+      }
+      planetImage.setAttribute('src', planetImgSrc);
+      currentTab.classList.add('active')
+      currentTab.classList.add('background-fade');
+      planetContentData.innerHTML = currentPlanet[key].content;
+      planetContentSource.href = currentPlanet[key].source;
+    }
+  });
+ });
 
 // Main handler for everything
 tabletNavigation.addEventListener('click', throttle((event) => {
   updatePage(false,tabletNavigation,event.target);
+  const geologyPicture = document.querySelector('#geology-picture');
+  if(geologyPicture) geologyPicture.parentNode.removeChild(geologyPicture)
   tabletTabs.forEach((tab, index) => {
     tab.className = '';
     if(index === 0) {
@@ -77,6 +131,8 @@ tabletNavigation.addEventListener('click', throttle((event) => {
 }, 1000));
 
 mobileNavigation.addEventListener('click', throttle((event) => {
+  const geologyPicture = document.querySelector('#geology-picture');
+  if(geologyPicture) geologyPicture.parentNode.removeChild(geologyPicture)
   updatePage(true,mobileNavigation,event.target);
 }, 1000));
 
