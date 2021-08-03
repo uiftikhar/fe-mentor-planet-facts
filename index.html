@@ -11,7 +11,7 @@
   <header class="header">
     <nav class="flex flex-ai-c flex-jc-sb container container__p-all">
       <h1>THE PLANETS</h1>
-      <section id="tablet-navigation" class="planets-nav">
+      <article id="tablet-navigation" class="planets-nav">
         <a href="#mercury">MERCURY</a>
         <a href="#venus">VENUS</a>
         <a href="#earth">EARTH</a>
@@ -20,7 +20,7 @@
         <a href="#saturn">SATURN</a>
         <a href="#uranus">URANUS</a>
         <a href="#neptune">NEPTUNE</a>
-      </section>
+      </article>
       <a id="btnHamburger" class="header__toggle">
         <span></span>
         <span></span>
@@ -28,15 +28,15 @@
       </a>
     </nav>
   </header>
-  <article class="content desktop-view tablet-view">
-    <section id="content-tabs-mobile" class="content__tabs-mobile flex flex-jc-sb">
+  <main class="content desktop-view tablet-view">
+    <nav id="content-tabs-mobile" class="content__tabs-mobile flex flex-jc-sb">
       <button class="active content__links-active-mercury">OVERVIEW</button>
       <button>STRUCTURE</button>
       <button>SURFACE</button>
-    </section>
-    <section id="planet-image" class="content__image-wrapper container__px">
+    </nav>
+    <figure id="planet-image" class="content__image-wrapper container__px">
       <img class="content__image-wrapper-mercury" src="./assets/planet-mercury.svg" alt="mercury"/>
-    </section>
+    </figure>
     <section id='planet-content' class="content__planet-text container__px">
       <h1>Mercury</h1>
       <p>Mercury is the smallest planet in the Solar System and the closest 
@@ -48,12 +48,12 @@
         Source :&nbsp;<a class="flex flex-jc-c" href="#">Wikipedia<img src="./assets/link.svg"/></a> 
       </p>
     </section>
-    <section id="content-tabs-tablet-up" class="content__tabs-tablet-up">
+    <nav id="content-tabs-tablet-up" class="content__tabs-tablet-up">
       <button class="active content__links-active-mercury">OVERVIEW</button>
       <button>STRUCTURE</button>
       <button>SURFACE</button>
-    </section>
-    <section id="planet-facts" class="content__planet-facts container__px">
+    </nav>
+    <article id="planet-facts" class="content__planet-facts container__px">
       <section class="content__planet-facts-wrapper flex flex-ai-c flex-jc-sb">
         <h4>ROTATION TIME</h4>
         <span>58.6 DAYS</span>
@@ -70,11 +70,11 @@
         <h4>AVERAGE TEMP.</h4>
         <span>430&#176;C</span>
       </section>
-    </section>
+    </article>
 
-  </article>
+  </main>
   
-  <div id="mobile-navigation" class="side-drawer">
+  <aside id="mobile-navigation" class="side-drawer">
     <a  href="#mercury"><span>MERCURY</span></a>
     <a  href="#venus"><span>VENUS</span></a>
     <a  href="#earth"><span>EARTH</span></a>
@@ -83,7 +83,7 @@
     <a  href="#saturn"><span>SATURN</span></a>
     <a  href="#uranus"><span>URANUS</span></a>
     <a  href="#neptune"><span>NEPTUNE</span></a>
-  </div>
+  </aside>
   <script type="module" src="data.js"></script>
   <script type="module" src="src/js/script.js"></script>
 </body>
