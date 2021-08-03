@@ -37,6 +37,8 @@
     }
     > a {
       position: relative;
+      // desktop only ?
+      padding: 26px 0px;
       &:not(:last-child) {
         margin-right: 2.0625rem;
       }

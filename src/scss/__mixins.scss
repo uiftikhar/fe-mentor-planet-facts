@@ -1,8 +1,8 @@
-$phone: 599px;
-$tablet: 600px;
-$tabletEnd: 1199px;
-$regularDesktop: 1200px;
-$bigDesktop: 1800px;
+$phone: 37.4375rem;
+$tablet: 37.5rem;
+$tabletEnd: 74.9375rem;
+$regularDesktop: 75rem;
+$bigDesktop: 112.5rem;
 
 @mixin for-phone-only {
   @media (max-width: $phone) { @content; }
@@ -27,12 +27,12 @@ $bigDesktop: 1800px;
 $planet-colors: $mercury, $venus, $earth, $mars, $jupiter, $saturn, $uranus, $neptune;
 
 
-@mixin mobile-nav($backgroundColor) {
+@mixin mobile-tabs($backgroundColor) {
   &::after {
     @content;
     position: absolute;
     width: 100%;
-    bottom: -1.2125rem;
+    bottom: 0;
     left: 0;
     height:0.25rem;
     background-color: $backgroundColor;
@@ -46,8 +46,8 @@ $planet-colors: $mercury, $venus, $earth, $mars, $jupiter, $saturn, $uranus, $ne
       @content;
       position: absolute;
       width: 100%;
-      height: 4px;
-      top: -37px;
+      height: 0.25rem;
+      top:  -0.75rem;
       left: 0;
       background-color: $backgroundColor;
     }

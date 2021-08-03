@@ -44,6 +44,15 @@ input {
   background: none;
   color: $white;
 }
+
+button {
+  &:not(.active):hover {
+  // &:hover {
+    background-color: rgba($color: $linkHover, $alpha: 0.2);
+    color: $white;
+    transition: background-color 250ms ease-in-out;
+  }
+}
 ul,
 ul li,
 ul ul li {
@@ -53,49 +62,6 @@ ul ul li {
    list-style-type: none;
    line-height: 0;
 }
-
-// .active {
-//   &-mercury  {
-//     @include mobile-nav($steelBlue) { 
-//       content: '';
-//     }
-//   }
-//   &-venus  {
-//     @include mobile-nav($lightOrange) { 
-//       content: '';
-//     }
-//   }
-//   &-earth  {
-//     @include mobile-nav($darkPurple) { 
-//       content: '';
-//     }
-//   }
-//   &-mars  {
-//     @include mobile-nav($lightRedOrange) { 
-//       content: '';
-//     }
-//   }
-//   &-jupiter  {
-//     @include mobile-nav($darkRedOrange) { 
-//       content: '';
-//     }
-//   }
-//   &-saturn  {
-//     @include mobile-nav($darkOrange) { 
-//       content: '';
-//     }
-//   }
-//   &-uranus  {
-//     @include mobile-nav($cyan) { 
-//       content: '';
-//     }
-//   }
-//   &-neptune  {
-//     @include mobile-nav($oceanBlue) { 
-//       content: '';
-//     }
-//   }
-// }
 
 // spacing
 .container {
