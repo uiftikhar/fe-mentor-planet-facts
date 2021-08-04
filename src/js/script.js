@@ -44,39 +44,9 @@ btnHamburger.addEventListener('click', () => {
 
 const onTabsClick = (allTabs, currentTab) => {
   currentTab.addEventListener('click',function listener() {
-    allTabs.forEach(otherLink => {
-      otherLink.className = '';
-    })
-    currentTab.classList.add(`content__tabs-active-${activePlanet}`)
-    if(currentTab.classList.contains('active')) {
-      currentTab.classList.remove('active')
-    } else {
-      const key = currentTab.innerHTML.toLowerCase() === 'surface' ? 'geology' : currentTab.innerHTML.toLowerCase();
-      let planetImgSrc = ''
-      if(key === 'geology') {
-        planetImgSrc = `./assets/geology-${activePlanet}.png`;
-      } else if(key==='surface') {
-        planetImgSrc = `./assets/planet-${activePlanet}.svg`;
-      } else {
-        planetImgSrc = `./assets/planet-${activePlanet}-internal.svg`;
-      }
-      planetImage.add
-      currentTab.classList.add('active')
-      currentTab.classList.add('background-fade');
-      planetContentData.innerHTML = currentPlanet[key].content;
-      planetContentSource.href = currentPlanet[key].source;
-    }
-  });
-}
-
-mobileTabs.forEach(tab => {  onTabsClick(mobileTabs, tab) })
-
-tabletTabs.forEach(currentTab => {
-  
-  currentTab.addEventListener('click',function listener() {
     const geologyPicture = document.querySelector('#geology-picture');
     if(geologyPicture) geologyPicture.parentNode.removeChild(geologyPicture)
-    tabletTabs.forEach(otherLink => {
+    allTabs.forEach(otherLink => {
       otherLink.className = '';
     })
     currentTab.classList.add(`content__tabs-active-${activePlanet}`)
@@ -89,20 +59,27 @@ tabletTabs.forEach(currentTab => {
         key = 'overview'
         planetImgSrc = `./assets/planet-${activePlanet}.svg`;
       }
-      if(currentTab.innerHTML.toLowerCase() === 'internal structure') {
+      if(currentTab.innerHTML.toLowerCase().includes('structure')) {
         key = 'structure'
         planetImgSrc = `./assets/planet-${activePlanet}-internal.svg`;
       }
-      if(currentTab.innerHTML.toLowerCase() === 'surface geology') {
+      if(currentTab.innerHTML.toLowerCase().includes( 'surface')) {
         key = 'geology'
         planetImgSrc = `./assets/planet-${activePlanet}.svg`;
         const elem = document.createElement("img");
         elem.setAttribute("src", `./assets/geology-${activePlanet}.png`);
-        elem.setAttribute("height", "199");
-        elem.setAttribute("width", "163");
+        if(currentTab.innerHTML.toLowerCase() === 'surface geology') {
+          elem.setAttribute("height", "199");
+          elem.setAttribute("width", "163");
+          elem.style.bottom = '0px';
+        } else {
+          elem.setAttribute("height", "199");
+          elem.setAttribute("width", "163");
+          elem.style.bottom = '-5px';
+          elem.style.transform = 'scale(0.4)';
+        }
         elem.id=  "geology-picture";
         elem.style.position = 'absolute';
-        elem.style.bottom = '0px';
         elem.setAttribute("alt", `${activePlanet}-geology`);
         document.querySelector('#planet-image').appendChild(elem);
         planetImage.classList.add(`content__image-wrapper-${activePlanet}-geology`);
@@ -114,7 +91,11 @@ tabletTabs.forEach(currentTab => {
       planetContentSource.href = currentPlanet[key].source;
     }
   });
- });
+}
+
+mobileTabs.forEach(tab => {  onTabsClick(mobileTabs, tab) })
+
+tabletTabs.forEach(tab => { onTabsClick(tabletTabs, tab)});
 
 // Main handler for everything
 tabletNavigation.addEventListener('click', throttle((event) => {
